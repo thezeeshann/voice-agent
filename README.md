@@ -4,7 +4,7 @@ A chain-structured speech-to-speech agent: mic input → text → LLM reply → 
 
 ## Architecture (chained pipeline)
 
-``` js
+``` text
 Mic → STT (Google Web Speech) → LLM (gpt-4o-mini, with conversation history) → TTS (gpt-4o-mini-tts, streamed) → Speaker
 ```
 

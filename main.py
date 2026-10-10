@@ -3,11 +3,15 @@ import speech_recognition as sr
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from openai.helpers import LocalAudioPlayer
-from prompt import SYSTEM_PROMPT
 
 load_dotenv()
 client = AsyncOpenAI()
 
+SYSTEM_PROMPT = """
+You're an expert voice agent. You are given the transcript of what the user said using voice.
+Reply as a voice agent would: your text will be converted to audio and played back to the user.
+Keep replies short and conversational, since long replies increase audio playback delay.
+"""
 
 async def tts(speech: str):
     # Convert text to speech using OpenAI TTS
