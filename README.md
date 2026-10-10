@@ -5,7 +5,8 @@ A chain-structured speech-to-speech agent: mic input → text → LLM reply → 
 ## Architecture (chained pipeline)
 
 ``` text
-Mic → STT (Google Web Speech) → LLM (gpt-4o-mini, with conversation history) → TTS (gpt-4o-mini-tts, streamed) → Speaker
+Mic → STT (Google Web Speech) → LLM (gpt-4o-mini, 
+with conversation history) → TTS (gpt-4o-mini-tts, streamed) → Speaker
 ```
 
 - **STT**: `speech_recognition` captures mic audio with energy-based VAD, transcribes via Google Web Speech.
